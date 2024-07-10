@@ -25,6 +25,13 @@ export default function Authenticated({ user, header, children }) {
 
     return (
         <div className="min-h-screen bg-gray-100">
+
+            {header && (
+                <header className="bg-white shadow">
+                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">{header}</div>
+                </header>
+            )}
+            
             <button
                 onClick={toggleSidebar}
                 aria-controls="default-sidebar"
@@ -53,7 +60,7 @@ export default function Authenticated({ user, header, children }) {
                         </li>
                         <li>
                             <Link
-                                href="#" className={`${route().current('products.*') ? 'bg-gray-200' : ''} flex items-center p-2 rounded-lg group`}>
+                                href={route('products.index')} className={`${route().current('products.*') ? 'bg-gray-200' : ''} flex items-center p-2 rounded-lg group`}>
                                 <MdOutlineShoppingBag size={20} className="mr-2" />
                                 <span className="flex-1 ms-3 whitespace-nowrap">Products</span>
                             </Link>

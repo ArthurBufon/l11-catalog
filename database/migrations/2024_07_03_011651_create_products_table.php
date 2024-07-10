@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('name', 100);
             $table->text('description')->nullable();
             $table->decimal('price', 10, 2);
-            $table->foreignId('category_id')->constrained();
             $table->foreignId('inventory_id')->constrained();
 
             $table->timestamps();

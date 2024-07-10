@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use Inertia\Inertia;
 
 class ProductController extends Controller
 {
@@ -13,7 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Product/Index', [
+            'products' => []
+        ]);
     }
 
     /**
